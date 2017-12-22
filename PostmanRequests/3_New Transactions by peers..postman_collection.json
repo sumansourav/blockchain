@@ -1,0 +1,128 @@
+{
+	"info": {
+		"name": "3_New Transactions by peers.",
+		"_postman_id": "95bdc25e-eaf2-960d-b97c-54dc70f1ebce",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5001/transactions/new",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"sender\":\"Suman\",\"recipient\":\"Gaurav\",\"amount\":10, \"message\":\"Tickets\"}"
+				},
+				"url": {
+					"raw": "http://localhost:5001/transactions/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"transactions",
+						"new"
+					]
+				},
+				"description": "Claim a new transaction locally on this node"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/transactions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"sender\":\"Suman\",\"recipient\":\"Gaurav\",\"amount\":10, \"message\":\"Aiweyin\"}"
+				},
+				"url": {
+					"raw": "http://localhost:5001/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"transactions"
+					]
+				},
+				"description": "Get the transactions at this node waiting to be added to a chain"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5002/transactions/new",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"sender\":\"Gaurav\",\"recipient\":\"Shalimaar Restaurant Guy\",\"amount\":25, \"message\":\"Kabobs & Biriyani\"}"
+				},
+				"url": {
+					"raw": "http://localhost:5002/transactions/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"transactions",
+						"new"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5002/transactions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"sender\":\"Suman\",\"recipient\":\"Gaurav\",\"amount\":10, \"message\":\"Aiweyin\"}"
+				},
+				"url": {
+					"raw": "http://localhost:5002/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"transactions"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

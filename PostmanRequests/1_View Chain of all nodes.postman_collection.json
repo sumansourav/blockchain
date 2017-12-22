@@ -1,0 +1,130 @@
+{
+	"info": {
+		"name": "1_View Chain of all nodes",
+		"_postman_id": "3d546651-50a5-89af-1138-b3464d8942ab",
+		"description": "View the chain of all nodes.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/chain",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json:",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type: application/json",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"sender\":\"5000\",\"recipient\":\"5001\",\"amount\":10, \"message\":\"Aiweyin\"}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/chain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"chain"
+					]
+				},
+				"description": "View the chain of the node running on 5000 port#. Think of this as a primary mining node."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/chain",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json:",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type: application/json",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"sender\":\"5000\",\"recipient\":\"5001\",\"amount\":10, \"message\":\"Aiweyin\"}"
+				},
+				"url": {
+					"raw": "http://localhost:5001/chain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"chain"
+					]
+				},
+				"description": "Chain of the node running on Port #5001 "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5002/chain",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json:",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type: application/json",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"sender\":\"5000\",\"recipient\":\"5001\",\"amount\":10, \"message\":\"Aiweyin\"}"
+				},
+				"url": {
+					"raw": "http://localhost:5002/chain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"chain"
+					]
+				},
+				"description": "View chain of the node running on port # 5002"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,58 @@
+{
+	"info": {
+		"name": "4_Miner's activities",
+		"_postman_id": "6a4536fc-36ff-9b53-5868-dafa82511826",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/transactions/discover",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/transactions/discover",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"transactions",
+						"discover"
+					]
+				},
+				"description": "Get a list of transactions to discover. A miner node needs to know this"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/mine",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/mine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"mine"
+					]
+				},
+				"description": "Mine with the available transactions!"
+			},
+			"response": []
+		}
+	]
+}

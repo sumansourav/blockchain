@@ -1,0 +1,100 @@
+{
+	"info": {
+		"name": "2_Register all nodes with each other",
+		"_postman_id": "4ba828a8-844f-01ad-8991-140023510da2",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/nodes/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"nodes\":[\"http://localhost:5001\", \"http://localhost:5002\"]}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/nodes/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nodes",
+						"register"
+					]
+				},
+				"description": "Register other two nodes with this one!"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/nodes/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"nodes\":[\"http://localhost:5000\", \"http://localhost:5002\"]}"
+				},
+				"url": {
+					"raw": "http://localhost:5001/nodes/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"nodes",
+						"register"
+					]
+				},
+				"description": "Register other two nodes with this one!"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5002/nodes/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"nodes\":[\"http://localhost:5000\", \"http://localhost:5001\"]}"
+				},
+				"url": {
+					"raw": "http://localhost:5002/nodes/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"nodes",
+						"register"
+					]
+				},
+				"description": "Register other two nodes with this one"
+			},
+			"response": []
+		}
+	]
+}
