@@ -88,9 +88,14 @@ class Blockchain:
         return_value = False
         # Replace our chain if we discovered a new, valid chain longer than ours
         if new_chain:
+            # Make the transactions not part of the authoratitive chain available for re-mining
+            self.current_transactions = self.recover_transactions(self.current_transactions, new_chain)
+
+            # Replace chain
             self.chain = new_chain
             return_value = True
 
+        # Double Check. Should be optimized
         # If we have transactions in current_transactions,
         # which are already a part of the authoritative blockchain, we purge those
         self_transactions = self.current_transactions
@@ -101,6 +106,22 @@ class Blockchain:
                     break
 
         return return_value
+
+    def recover_transactions(self, curr_transaction, auth_chain):
+        """
+        This function covers a special case: When there is a transaction waiting to be a part of a block chain,
+        but it has not been included by any mining node. The function recovers such transactions and makes
+        them available for re-mining at a later stage. Without this, the transactions not part of a block-chain yet
+        would be lost.
+
+        :return: list of transactions recovered
+        """
+        recovered_transactions = []
+
+        for trans_item in curr_transaction:
+            if (trans_item not in auth_chain[-1]['transactions']) and ('Miner' not in trans_item["message"]):
+                recovered_transactions.append(trans_item)
+        return recovered_transactions
 
     def new_block(self, proof, previous_hash):
         """
@@ -188,7 +209,7 @@ class Blockchain:
         guess_hash = hashlib.sha256(guess).hexdigest()
         return guess_hash[:4] == "0000"
 
-
+# Using flask as a Python based micro app-server
 # Instantiate the Node
 app = Flask(__name__)
 
