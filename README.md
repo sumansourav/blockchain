@@ -2,8 +2,8 @@
 
 This project was originally intended for academic purpose.
 Read the motivation, progress and use-cases from: 
-BlockchainPOCProject.pptx
-ComprehensiveApplicationUseCases.docx
+[BlockchainPOCProject.pptx](https://github.com/sumansourav/blockchain/blob/master/BlockchainPOCProject.pptx) and 
+[ComprehensiveApplicationUseCases.docx](https://github.com/sumansourav/blockchain/blob/master/ComprehensiveApplicationUseCases.docx)
 
 The code is originally sourced from:
 "Learn Blockchains by Building One"
@@ -45,7 +45,7 @@ Major
 (closely following Venmo-like transaction information)
 3. Purging verified and included transactions from all nodes.
 4. Improved hashing logic to include last block's data for true immutability.
-5. 4. Recovering excluded transactions and making them available for re-mining.
+5. Recovering excluded transactions and making them available for re-mining.
 
 Minor
 1. Converting timestamps to human readable format.
